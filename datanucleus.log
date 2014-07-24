@@ -1,0 +1,18 @@
+17:09:47,002 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.1) for API "JDO"
+17:09:47,264 (main) WARN  [DataNucleus.MetaData] - Metadata has jdbc-type of null yet this is not valid. Ignored
+17:09:47,323 (main) INFO  [DataNucleus.Enhancer] - Class "entities.Employee" is already enhanced.
+17:09:47,324 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes.
+17:09:47,504 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.1) for API "JDO"
+17:09:47,631 (main) WARN  [DataNucleus.MetaData] - Metadata has jdbc-type of null yet this is not valid. Ignored
+17:09:47,683 (main) INFO  [DataNucleus.Enhancer] - Class "entities.Employee" is already enhanced.
+17:09:47,683 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes.
+17:16:21,387 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.1) for API "JDO"
+17:16:21,398 (main) ERROR [DataNucleus.MetaData] - 
+17:16:21,398 (main) ERROR [DataNucleus.MetaData] - 
+17:16:21,399 (main) ERROR [DataNucleus.MetaData] - 
+17:16:21,399 (main) ERROR [DataNucleus.MetaData] - 
+17:16:21,400 (main) ERROR [DataNucleus.MetaData] - 
+17:16:21,401 (main) ERROR [DataNucleus.MetaData] - 
+17:16:21,401 (main) ERROR [DataNucleus.MetaData] - 
+17:16:21,402 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 0 classes.
+17:16:21,403 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed and no classes were enhanced. Consult the log for full details

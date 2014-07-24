@@ -1,4 +1,8 @@
+rest/JSONService.class
+client/JerseyClientPost$1.class
 services/EmployeeTest.class
+client/JerseyClientGet.class
+client/JerseyClientPost.class
 DAO/EmployeeDAO.class
 entities/Employee.class
 rest/HelloWorldService.class

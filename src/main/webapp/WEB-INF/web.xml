@@ -9,14 +9,14 @@
 		<servlet-name>jersey-serlvet</servlet-name>
 		<servlet-class>
                      com.sun.jersey.spi.container.servlet.ServletContainer
-                </servlet-class>
-                <init-param>
+        </servlet-class>
+        <init-param>
                 
     <!--next part cannot be skipped  -->
     <!-- else error Jersey REST The ResourceConfig instance does not contain any root resource classes -->    
-   <param-name>com.sun.jersey.config.property.packages</param-name>
-   <param-value>rest</param-value>
-</init-param>
+   		<param-name>com.sun.jersey.config.property.packages</param-name>
+   		<param-value>rest</param-value>
+		</init-param>
 
 <init-param>
 		<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
