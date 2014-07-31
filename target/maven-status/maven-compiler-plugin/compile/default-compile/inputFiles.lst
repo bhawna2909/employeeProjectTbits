@@ -1,7 +1,10 @@
+/home/bhawna/employee_workspace/e_proj/src/main/java/common/EmployeeBean.java
 /home/bhawna/employee_workspace/e_proj/src/main/java/DAO/EmployeeDAO.java
 /home/bhawna/employee_workspace/e_proj/src/main/java/rest/JSONService.java
 /home/bhawna/employee_workspace/e_proj/src/main/java/rest/HelloWorldService.java
 /home/bhawna/employee_workspace/e_proj/src/main/java/client/JerseyClientGet.java
 /home/bhawna/employee_workspace/e_proj/src/main/java/entities/Employee.java
 /home/bhawna/employee_workspace/e_proj/src/main/java/services/EmployeeTest.java
+/home/bhawna/employee_workspace/e_proj/src/main/java/common/WelcomeBean.java
 /home/bhawna/employee_workspace/e_proj/src/main/java/client/JerseyClientPost.java
+/home/bhawna/employee_workspace/e_proj/src/main/java/common/HelloBean.java

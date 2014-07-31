@@ -1,13 +1,20 @@
 package entities;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
-@PersistenceCapable(table = "employee", detachable = "true")
-public class Employee {
+@PersistenceCapable(table = "Employee", detachable = "true")
+public class Employee implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@PrimaryKey
 	@Persistent
@@ -17,15 +24,15 @@ public class Employee {
 	@Column(allowsNull = "false", jdbcType = "varchar")
 	private String name;
 
-	@Persistent(column = "department")
+	@Persistent(column = "dept")
 	@Column(allowsNull = "false", jdbcType = "varchar")
 	private String dept;
 
-	@Persistent(column = "Age")
+	@Persistent(column = "age")
 	@Column(allowsNull = "false", jdbcType = "int")
 	private int age;
 
-	@Persistent(column = "Address")
+	@Persistent(column = "address")
 	@Column(allowsNull = "false", jdbcType = "varchar")
 	private String address;
 
