@@ -12,7 +12,7 @@ import javax.faces.model.SelectItem;
 
 import org.primefaces.event.SelectEvent;
 
-import DAO.EmployeeDAO;
+import dao.EmployeeDAO;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;

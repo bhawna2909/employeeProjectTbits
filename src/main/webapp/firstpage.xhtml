@@ -6,34 +6,130 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 
-<h:title>Insert title here</h:title>
+	<h:title>Welcome</h:title>
 </h:head>
 <h:body>
-    <p:panel id="panel" header="Employee Database Management"  style="margin-bottom:10px;">
-    </p:panel>
-    <h3>Scrollable</h3>
-    <p:tabView scrollable="true">
-        <p:tab title="Tab 1">Tab 1 Content</p:tab>
-        <p:tab title="Tab 2">Tab 2 Content</p:tab>
-        <p:tab title="Tab 3">Tab 3 Content</p:tab>
-        <p:tab title="Tab 4">Tab 4 Content</p:tab>
-        <p:tab title="Tab 5">Tab 5 Content</p:tab>
-        <p:tab title="Tab 6">Tab 6 Content</p:tab>
-        <p:tab title="Tab 7">Tab 7 Content</p:tab>
-        <p:tab title="Tab 8">Tab 8 Content</p:tab>
-        <p:tab title="Tab 9">Tab 9 Content</p:tab>
-        <p:tab title="Tab 10">Tab 10 Content</p:tab>
-        <p:tab title="Tab 11">Tab 11 Content</p:tab>
-        <p:tab title="Tab 12">Tab 12 Content</p:tab>
-        <p:tab title="Tab 13">Tab 13 Content</p:tab>
-        <p:tab title="Tab 14">Tab 14 Content</p:tab>
-        <p:tab title="Tab 15">Tab 15 Content</p:tab>
-             
-    </p:tabView>
+	<p:panel id="panel" header="Employee Database Management"
+		style="margin-bottom:10px;">
+	</p:panel>
+	<h3>Select options</h3>
+	<p:tabView scrollable="false">
+		<p:tab title="Store">
+			<h:form>
+
+				<h:panelGrid id="grid" cellpadding="5" columns="2"
+					style="margin-bottom:10px">
+					<f:facet name="header">
+						<p:messages id="msgs" />
+					</f:facet>
+
+					<p:outputLabel for="name" value="Name:" />
+					<p:inputText id="name" value="#{empAdd.name}" />
+
+					<p:outputLabel for="dept" value="Department:" />
+					<p:inputText id="dept" value="#{empAdd.dept}" />
+
+					<p:outputLabel for="age" value="Age:" />
+					<p:inputText id="age" value="#{empAdd.age}" />
 
 
-<div style="background-color:navy;width:100%;color:white"></div>
+					<p:outputLabel for="address" value="Address:" />
+					<p:inputText id="address" value="#{empAdd.address}" />
+
+
+
+
+
+				</h:panelGrid>
+				<h:panelGrid>
+					<p:commandButton value="Submit" id="sad" update="grid"
+						actionListener="#{empAdd.store_single}" />
+				</h:panelGrid>
+
+			</h:form>
+		</p:tab>
+
+
+
+
+
+		<p:tab title="Update">
+			<h:form>
+
+				<h:panelGrid id="grid" cellpadding="5" columns="2"
+					style="margin-bottom:10px">
+					<f:facet name="header">
+						<p:messages id="msgs" />
+					</f:facet>
+
+					<p:outputLabel for="pkey" value="Id:" />
+					<p:inputText id="pkey" value="#{empAdd.pkey}" />
+
+					<p:outputLabel for="dept" value="Department:" />
+					<p:inputText id="dept" value="#{empAdd.dept}" />
+				</h:panelGrid>
+				<h:panelGrid>
+					<p:commandButton value="Update" id="up" update="grid"
+						actionListener="#{empAdd.update_single}" />
+				</h:panelGrid>
+
+			</h:form>
+
+		</p:tab>
+
+
+		<p:tab title="Display">
+		
+		
+		<h:form>
+			<p:panel id="panel" style="margin-bottom:10px;">
+				<p:panelGrid id="grid" columns="1">
+					
+				
+			<p:commandButton id="listbutton" value="List All Employees"
+				action="#{emp.display_all}" update="listpanel" />
+				</p:panelGrid>
+		
+					<f:facet name="header">
+            Result
+        </f:facet>
+					<p:panel id="listpanel"  for="listbutton" style="margin-bottom:10px;" dynamic="true" >
+				
+				<p:dataTable value="#{employeeBean.result}" var="emp" rows="10" paginator="true">
+					<p:column headerText="Employee ID">
+						<h:outputText value="#{emp.pkey}" />
+					</p:column>
+					
+					<p:column headerText="Name">
+						<h:outputText value="#{emp.name}" />
+					</p:column>
+					
+					<p:column headerText="Department">
+						<h:outputText value="#{emp.dept}" />
+					</p:column>
+					
+					<p:column headerText="Age">
+						<h:outputText value="#{emp.age}" />
+					</p:column>
+					
+					<p:column headerText="Address">
+						<h:outputText value="#{emp.address}" />
+					</p:column>
+				</p:dataTable>
+			</p:panel>
+			</p:panel>
+			</h:form>
+				
+		</p:tab>
+		<p:tab title="Tab 4">Delete</p:tab>
+
+
+
+	</p:tabView>
+
+
+	<div style="background-color: navy; width: 100%; color: white"></div>
 </h:body>
 </html>

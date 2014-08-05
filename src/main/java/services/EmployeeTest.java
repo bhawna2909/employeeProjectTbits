@@ -5,8 +5,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.EmployeeDAO;
+
 import entities.Employee;
-import DAO.EmployeeDAO;
 
 public class EmployeeTest {
 
@@ -44,8 +45,7 @@ public class EmployeeTest {
 						dept = br.readLine();
 						age = Integer.parseInt(br.readLine());
 						address = br.readLine();
-						boolean x = EmployeeDAO.store_single(new Employee(pkey,
-								name, dept, age, address));
+						boolean x = EmployeeDAO.store_single(new Employee(name, dept, age, address));
 						if (x)
 							System.out.println("Entity stored");
 						else
@@ -62,7 +62,7 @@ public class EmployeeTest {
 							dept = br.readLine();
 							age = Integer.parseInt(br.readLine());
 							address = br.readLine();
-							Employee e = new Employee(pkey, name, dept, age,
+							Employee e = new Employee(name, dept, age,
 									address);
 							elist.add(e);
 							System.out.println("continue ? 1. yes 0. no");

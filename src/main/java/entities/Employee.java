@@ -17,7 +17,7 @@ public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@PrimaryKey
-	@Persistent
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private int pkey;
 
 	@Persistent(column = "name")
@@ -41,9 +41,9 @@ public class Employee implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(int pkey, String name, String dept, int age, String address) {
+	public Employee( String name, String dept, int age, String address) {
 		super();
-		this.pkey = pkey;
+		
 		this.name = name;
 		this.dept = dept;
 		this.age = age;

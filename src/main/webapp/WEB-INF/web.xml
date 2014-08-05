@@ -14,7 +14,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 </context-param>
 
 <welcome-file-list>
-<welcome-file>faces/hello.xhtml</welcome-file>
+<welcome-file>firstpage.xhtml</welcome-file>
 </welcome-file-list>
 
 <servlet>

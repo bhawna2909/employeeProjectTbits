@@ -8,6 +8,8 @@
 
 
 	<dependencies>
+
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -81,9 +83,9 @@
 			<artifactId>primefaces</artifactId>
 			<version>5.0.RC2</version>
 		</dependency>
-
-	</dependencies>
-
+		<!-- birt dependency -->
+		
+</dependencies>
 	<repositories>
 		<repository>
 			<id>codehaus</id>

@@ -1,4 +1,5 @@
-package DAO;
+package dao;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,7 +13,7 @@ import javax.jdo.Transaction;
 
 import entities.Employee;
 
-public class EmployeeDAO {
+public class EmployeeDAO{
 
 	private static PersistenceManagerFactory pmf = JDOHelper
 			.getPersistenceManagerFactory("datanucleus.properties");
