@@ -4,14 +4,14 @@ rest/JSONService.class
 client/JerseyClient$2.class
 client/JerseyClientPost$3.class
 client/JerseyClientGet.class
-entities/Employee.class
 rest/HelloWorldService.class
+entities/Employee.class
 common/AddemployeeBean.class
 client/JerseyClient$1.class
 rest/JSONService$2.class
 common/WelcomeBean.class
-client/testclient.class
 client/JerseyClientPost$1.class
+client/testclient.class
 dao/EmployeeDAO.class
 rest/JSONService$1.class
 services/EmployeeTest.class

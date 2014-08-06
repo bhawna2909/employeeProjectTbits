@@ -37,23 +37,18 @@
 
 					<p:outputLabel for="address" value="Address:" />
 					<p:inputText id="address" value="#{empAdd.address}" />
-
-
-
-
-
 				</h:panelGrid>
-				<h:panelGrid>
+				<h:panelGrid column="2" cellpadding="5" cellspacing="4">
 					<p:commandButton value="Submit" id="sad" update="grid"
 						actionListener="#{empAdd.store_single}" />
+					<p:commandButton type="reset" value="Reset" update="@this"
+						actionListener="#{empAdd.reset}" />
+
+
 				</h:panelGrid>
 
 			</h:form>
 		</p:tab>
-
-
-
-
 
 		<p:tab title="Update">
 			<h:form>
@@ -70,9 +65,11 @@
 					<p:outputLabel for="dept" value="Department:" />
 					<p:inputText id="dept" value="#{empAdd.dept}" />
 				</h:panelGrid>
-				<h:panelGrid>
+				<h:panelGrid cellpadding="6" cellspacing="5" column="2">
 					<p:commandButton value="Update" id="up" update="grid"
 						actionListener="#{empAdd.update_single}" />
+					<p:commandButton type="reset" value="Reset" update="@this"
+						actionListener="#{empAdd.reset}" />
 				</h:panelGrid>
 
 			</h:form>
@@ -81,52 +78,63 @@
 
 
 		<p:tab title="Display">
-		
-		
-		<h:form>
-			<p:panel id="panel" style="margin-bottom:10px;">
-				<p:panelGrid id="grid" columns="1">
-					
-				
-			<p:commandButton id="listbutton" value="List All Employees"
-				action="#{emp.display_all}" update="listpanel" />
-				</p:panelGrid>
-		
+
+
+			<h:form>
+				<p:panel id="panel" style="margin-bottom:10px;">
+					<p:panelGrid id="grid3" columns="5">
+						<p:commandButton id="listbutton" value="List All Employees"
+							action="#{empAdd.display_all}" update="listpanel" />
+					</p:panelGrid>
+
 					<f:facet name="header">
-            Result
-        </f:facet>
-					<p:panel id="listpanel"  for="listbutton" style="margin-bottom:10px;" dynamic="true" >
-				
-				<p:dataTable value="#{employeeBean.result}" var="emp" rows="10" paginator="true">
-					<p:column headerText="Employee ID">
-						<h:outputText value="#{emp.pkey}" />
-					</p:column>
-					
-					<p:column headerText="Name">
-						<h:outputText value="#{emp.name}" />
-					</p:column>
-					
-					<p:column headerText="Department">
-						<h:outputText value="#{emp.dept}" />
-					</p:column>
-					
-					<p:column headerText="Age">
-						<h:outputText value="#{emp.age}" />
-					</p:column>
-					
-					<p:column headerText="Address">
-						<h:outputText value="#{emp.address}" />
-					</p:column>
-				</p:dataTable>
-			</p:panel>
-			</p:panel>
+						<p:messages id="msgs" />
+					</f:facet>
+					<p:panel id="listpanel" for="listbutton"
+						style="margin-bottom:10px;" dynamic="true">
+
+						<p:dataTable value="#{empAdd.result}" var="emp" rows="10"
+							paginator="true">
+							<p:column headerText="Employee ID">
+								<h:outputText value="#{emp.pkey}" />
+							</p:column>
+
+							<p:column headerText="Name">
+								<h:outputText value="#{emp.name}" />
+							</p:column>
+
+							<p:column headerText="Department">
+								<h:outputText value="#{emp.dept}" />
+							</p:column>
+
+							<p:column headerText="Age">
+								<h:outputText value="#{emp.age}" />
+							</p:column>
+
+							<p:column headerText="Address">
+								<h:outputText value="#{emp.address}" />
+							</p:column>
+						</p:dataTable>
+					</p:panel>
+				</p:panel>
 			</h:form>
-				
+
 		</p:tab>
-		<p:tab title="Tab 4">Delete</p:tab>
-
-
-
+		<p:tab title="Delete Employee">
+			<h:form>
+				<h:panelGrid id="deleteGrid" column="2">
+					<f:facet name="header">
+						<p:messages id="msgs" />
+					</f:facet>
+					<h:outputText for="delID" value="Emp ID:" />
+					<p:inputText id="delID" value="#{empAdd.pkey}" />
+					<p:commandButton value="Delete" id="delEmp"
+						update="deleteGrid,delID" actionListener="#{empAdd.delete}" />
+					<p:commandButton type="reset" value="Reset" update="@this"
+						actionListener="#{empAdd.reset}" />
+				</h:panelGrid>
+			</h:form>
+		</p:tab>
 	</p:tabView>
 
 

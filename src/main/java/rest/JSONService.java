@@ -73,12 +73,12 @@ public class JSONService {
 	}
 	
 	@GET
-	@Path("/deleteOne")
+	@Path("/deleteOne/{empid}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response deleteOne() {
-		EmployeeDAO.display(25);
+	public Response deleteOne(@PathParam("empid") int id) {
+		EmployeeDAO.delete_single(id);
 
-		return Response.status(200).entity("i am here")
+		return Response.status(200).entity(id)
 				.build();
 
 	}
@@ -112,7 +112,7 @@ public class JSONService {
 	
 	public Response store_singleEmp(Employee emp) {
 		EmployeeDAO.store_single(emp); 
-		return Response.status(201).entity(emp).build();
+		return Response.status(201).entity("sucess").build();
 
 	}
 

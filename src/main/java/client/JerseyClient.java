@@ -52,7 +52,7 @@ public class JerseyClient {
 
 	
 	public static boolean delete_single(int id) {
-
+boolean flag=false;
 		try {
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(
@@ -60,17 +60,18 @@ public class JerseyClient {
 			Client client = Client.create(clientConfig);
 
 			WebResource webResource = client
-					.resource("http://localhost:8080/e_proj/rest/json/delete_single");
+					.resource("http://localhost:8080/e_proj/rest/json/deleteOne/"+id);
 
 			ClientResponse response = webResource.type("application/json").get(
 					ClientResponse.class);
 			if (response.getStatus() != 200) {
 				throw new RuntimeException("Error: " + response.getStatus());
 			}
+			flag=true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return false;
+		return flag;
 	}
 
 	public static boolean delete_all(){
@@ -80,7 +81,7 @@ public class JerseyClient {
 			clientConfig.getFeatures().put(
 					JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
-
+			
 			WebResource webResource = client
 					.resource("http://localhost:8080/e_proj/rest/json/delete_all");
 
@@ -97,6 +98,7 @@ public class JerseyClient {
 	}
 	
 	public static boolean update_single(int id,String dept){
+		boolean flag=false;
 		HashMap<String ,Object> entity = new HashMap<String ,Object>();
 		entity.put("id",(Integer)id);
 		entity.put("dept", dept);
@@ -119,12 +121,13 @@ public class JerseyClient {
 			if (response.getStatus() != 201) {
 				throw new RuntimeException("Error: " + response.getStatus());
 			}
+			flag=true;
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return false;
+		return flag;
 
 	}
 	
@@ -147,11 +150,11 @@ public class JerseyClient {
 				throw new RuntimeException("Error: " + response.getStatus());
 			}
 
-			System.out.println("output: ");
+			//System.out.println("output: ");
 			empList = (List<Employee>) response
 					.getEntity(new GenericType<List<Employee>>() {
 					});
-			System.out.println(empList);
+			//System.out.println(empList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
